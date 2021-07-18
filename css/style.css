@@ -1,0 +1,274 @@
+:root {
+    --CorPadrao1: #111;
+    --CorFonte: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}    
+
+body { 
+    font-family: 'Tomorrow', sans-serif;
+    background-color: var(--CorPadrao1);
+}
+
+
+header .container {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    z-index: 1;
+}
+
+header .logo {
+    font-size: 40px;
+    margin-left: 5%;
+    font-weight: bold;
+    color: var(--CorFonte);
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--CorFonte);
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    border-bottom: 1px solid var(--CorFonte);
+}
+
+/* Seção banner principal */
+
+.img-principal {
+    background: url(../img/banner.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    height: calc(100vh - 45px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-principal .title {
+    font-size: 6vw; 
+    letter-spacing: 0.9em;
+    text-transform: uppercase;
+    color: var(--CorFonte);
+}
+
+.img-principal .subtitle {
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 1%;
+    letter-spacing: 0.4em;
+    color: var(--CorFonte);
+}
+
+/* Seção models */
+
+.about_sale {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2em;
+    height: 20vh;
+    background-color:var(--CorPadrao1);
+    color: var(--CorFonte);
+}
+
+
+/* banner hover */
+
+.models {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #111; 
+}
+
+.models .container {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background: #222;
+}
+
+/* titulos e subtitulos promoção */
+
+.subtitle_promotion span {
+    color: red;
+    text-decoration: line-through;
+}
+
+.container .clip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.container .clip.clip1 {
+    background: url(../img/promotion01.jpg);
+    background-size: cover;
+    background-position: left top;
+    clip-path: polygon(0 0, 55% 0, 20% 100%, 0% 100%);
+}
+
+.container .clip.clip2 {
+    background: url(../img/promotion02.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(55% 0, 100% 0, 45% 100%, 20% 100%);
+}
+
+.container .clip.clip3 {
+    background: url(../img/promotion03.jpg);
+    background-size: cover;
+    background-position: right center;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 45% 100%);
+}
+
+.container:hover .clip {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+.container .clip:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.container .clip .content {
+    position: absolute;
+    bottom: -100;
+    left: 0;
+    width: 70%;
+    padding: 20px;
+    background-color: rgba(248,248,255, 0.3);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.container .clip:hover .content {
+    bottom: 0;
+    opacity: 1;
+}
+
+/* Section announcement and form */
+
+.section_form {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-top: 3%;
+} 
+
+.section_form .announcement {
+    width: 50%;
+    color: white;
+}
+
+.section_form .announcement h2 {
+    font-size: 32px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.section_form .announcement h2 span {
+    color: red;
+}
+
+.section_form .announcement p {
+    width: 75%;
+    margin: 3% auto;
+    font-size: 22px;
+    line-height: 2;
+}
+
+/* Form */
+
+#content {
+    width: 50%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}    
+
+#form {
+    width: 70%;
+    padding: 3%;
+    text-align: center;
+    border: 1px solid white;
+}
+
+#form h2 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 32px;
+}
+
+#form input {
+    border: 0;
+    background-color: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #A9A9A9;
+    padding: 14px 10px;
+    width: 30vw;
+    outline: none;
+    color: #111;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+#form input:focus {
+    width: 32vw;
+    border-color: rgba(28, 28, 28, 0.8);
+}
+
+#form input[type = "submit"] {
+    border: 0;
+    background-color: #fff;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #A9A9A9;
+    padding: 14px 7px;
+    outline: none;
+    color: #000;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+#form input[type = "submit"]:hover {
+    background-color: rgba(46, 204, 113, 0.8);
+} 
+
+/* Footer */
+
+footer {
+    width: 100%;
+    height: 5vh;
+    text-align: center;
+    color: #fff;
+
+}
